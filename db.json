@@ -1,0 +1,83 @@
+{ "Premiere": [
+{
+
+    "id": "1",
+
+    "title": "The Giant Gila Monster",
+
+    "runtime": "108",
+
+    "capacity": 30,
+
+    "showtime": "04:00PM",
+
+    "tickets": 30,
+
+    "description": "A giant lizard terrorizes a rural Texas community  and a heroic teenager attempts to destroy the creature.",
+
+    "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
+
+  },
+  
+  {
+
+    "id": "2",
+
+    "title": "Into The Badlands",
+
+    "runtime": "108",
+
+    "capacity": 70,
+
+    "showtime": "06:00PM",
+
+    "tickets": 70,
+
+    "description": "The series follows a warrior and a young boy who journey through a dangerous feudal land together seeking enlightenment.",
+
+    "poster": "images/intothebadposter.jpeg"
+
+  },
+ 
+  {
+
+    "id": "3",
+
+    "title": "Suits",
+
+    "runtime": "108",
+
+    "capacity": 50,
+
+    "showtime": "08:00PM",
+
+    "tickets": 50,
+
+    "description": "The series revolves around corporate lawyer Harvey Specter and his associate attorney Mike Ross, the latter practicing without a law degree.",
+
+    "poster": "images/suitsposter.jpeg"
+
+  },
+  
+  {
+
+    "id": "4",
+
+    "title": "The 100",
+
+    "runtime": "108",
+
+    "capacity": 80,
+
+    "showtime": "02:00PM",
+
+    "tickets": 80,
+
+    "description": "Image result for the 100 description The 100 follows post-apocalyptic survivors from a space habitat, the Ark, who return to Earth<br> nearly a century after a devastating nuclear apocalypse.",
+
+    "poster": "images/the100poster.jpg"
+
+  }
+
+]
+}
