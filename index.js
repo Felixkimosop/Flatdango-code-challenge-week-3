@@ -49,11 +49,14 @@ btn.addEventListener("click", function (e) {
   e.preventDefault()
 
   let noOfTickets = document.getElementById("amount").value;
+  let tickestsAvailable = document.getElementById("ticket")
+  
   
 
   const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
 
   tickets.textContent = newTickets;
+  tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
 
   if(parseInt(tickets.textContent) >= parseInt(capacity.textContent)){
     tickets.textContent = "Tickets Sold Out"
@@ -61,6 +64,7 @@ btn.addEventListener("click", function (e) {
   else{
     tickets.textContent = newTickets
   }
+
   
 
   
