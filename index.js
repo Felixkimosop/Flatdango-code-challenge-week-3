@@ -10,17 +10,15 @@ const capacity = document.getElementById("capacity");
 const showTime = document.getElementById("showtime");
 let tickets = document.getElementById("tickets");
 const description = document.getElementById("description");
-const form = document.querySelector("#form")
-const input = document.createElement("input")
-input.type = "hidden"
-input.className = "inputs"
-form.appendChild(input)
+const form = document.querySelector("#form");
+const input = document.createElement("input");
+input.type = "hidden";
+input.className = "inputs";
+form.appendChild(input);
 
 fetch(" http://localhost:3000/Premiere")
   .then((res) => res.json())
   .then(function (premiere) {
-    console.log(premiere);
-
     premiere.map(function (premiere) {
       const list = document.createElement("ul");
       movies.appendChild(list);
@@ -43,48 +41,29 @@ fetch(" http://localhost:3000/Premiere")
         showTime.textContent = `Showtime: ${premiere.showtime}`;
         tickets.textContent = premiere.tickets;
         description.textContent = `Description: ${premiere.description}`;
-        
       }
-  
-
     });
-
-   
-
   });
 
+btn.addEventListener("click", function (e) {
+  e.preventDefault()
 
-  const btn = document.getElementById("btn")
-
-  btn.addEventListener("click", function(e){
+  let noOfTickets = document.getElementById("amount").value;
   
-    e.preventDefault()
-  
-  
-      let noOfTickets = document.getElementById("amount").value
-      const id = document.querySelector(".inputs").id
-  
-  
-      const newTickets = parseInt( tickets.textContent - noOfTickets)
-  
-      tickets.textContent = newTickets
 
-      fetch(`http://localhost:3000/Premiere/${id}`,{
-        method: "POST",
+  const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
 
-      headers:{
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(premiere.tickets)
-      })
-      .then(res => res.json())
-      .then(function(premiere){
-        premiere.tickets = newTickets
+  tickets.textContent = newTickets;
 
-      })
-  })
-
-
-    
+  if(parseInt(tickets.textContent) >= parseInt(capacity.textContent)){
+    tickets.textContent = "Tickets Sold Out"
+  }
+  else{
+    tickets.textContent = newTickets
+  }
+  
 
   
+});
+
+
