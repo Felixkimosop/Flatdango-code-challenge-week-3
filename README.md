@@ -15,7 +15,7 @@
 
 ## Live Link
 The application is deployed in Github Page
-Here is the link [JsonServer](kips90.github.io/Intro-to-github/)
+Here is the link [Flatdango](https://felixkimosop.github.io/Flatdango-code-challenge-week-3/)
 
 ## Bugs
     There is no bugs in the project.
