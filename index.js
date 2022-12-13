@@ -15,6 +15,8 @@ const input = document.createElement("input");
 input.type = "hidden";
 input.className = "inputs";
 form.appendChild(input);
+let tickestsAvailable = document.getElementById("ticket")
+
 
 fetch(" http://localhost:3000/Premiere")
   .then((res) => res.json())
@@ -41,6 +43,11 @@ fetch(" http://localhost:3000/Premiere")
         showTime.textContent = `Showtime: ${premiere.showtime}`;
         tickets.textContent = premiere.tickets;
         description.textContent = `Description: ${premiere.description}`;
+        tickestsAvailable.textContent = premiere.tickets_available
+
+        
+
+
       }
     });
   });
@@ -49,20 +56,26 @@ btn.addEventListener("click", function (e) {
   e.preventDefault()
 
   let noOfTickets = document.getElementById("amount").value;
-  let tickestsAvailable = document.getElementById("ticket")
-  
   
 
-  const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
+    
 
-  tickets.textContent = newTickets;
-  tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
+  if((parseInt(tickets.textContent) > parseInt(capacity.textContent))&&(parseInt(tickestsAvailable.textContent)== 0)){
+    tickets.textContent = capacity.textContent
+    tickestsAvailable.textContent = 0
+  }
+  else if((parseInt(noOfTickets) > parseInt(tickestsAvailable.textContent))&&(parseInt(tickestsAvailable.textContent)>= 0)){
+    // const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
 
-  if(parseInt(tickets.textContent) >= parseInt(capacity.textContent)){
-    tickets.textContent = "Tickets Sold Out"
+    alert( "You have bought more than what we have")
+    // tickestsAvailable.textContent = "No more tickets"
   }
   else{
+    const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
+  tickets.textContent = newTickets;
+  tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
     tickets.textContent = newTickets
+    tickestsAvailable.textContent  = parseInt(tickestsAvailable.textContent)
   }
 
   
