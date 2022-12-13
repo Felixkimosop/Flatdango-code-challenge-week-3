@@ -11,9 +11,9 @@ const showTime = document.getElementById("showtime");
 let tickets = document.getElementById("tickets");
 const description = document.getElementById("description");
 const form = document.querySelector("#form");
-const input = document.createElement("input");
-input.type = "hidden";
-input.className = "inputs";
+let input = document.createElement("input");
+// input.type = "hidden";
+input.id = "id";
 form.appendChild(input);
 let tickestsAvailable = document.getElementById("ticket")
 
@@ -44,6 +44,7 @@ fetch(" http://localhost:3000/Premiere")
         tickets.textContent = premiere.tickets;
         description.textContent = `Description: ${premiere.description}`;
         tickestsAvailable.textContent = premiere.tickets_available
+        input.value = premiere.id
 
         
 
@@ -73,9 +74,9 @@ btn.addEventListener("click", function (e) {
   else{
     const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
   tickets.textContent = newTickets;
-  tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
+  // tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
     tickets.textContent = newTickets
-    tickestsAvailable.textContent  = parseInt(tickestsAvailable.textContent)
+    tickestsAvailable.textContent  = parseInt(tickestsAvailable.textContent)-parseInt(noOfTickets)
   }
 
   
