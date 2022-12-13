@@ -6,8 +6,8 @@
       "runtime": "108",
       "capacity": 30,
       "showtime": "04:00PM",
-      "tickets": 0,
-      "tickets_available": 30,
+      "tickets": "3",
+      "tickets_available": "27",
       "description": "A giant lizard terrorizes a rural Texas community  and a heroic teenager attempts to destroy the creature.",
       "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
     },
@@ -17,8 +17,8 @@
       "runtime": "108",
       "capacity": 70,
       "showtime": "06:00PM",
-      "tickets": 0,
-      "tickets_available": 70,
+      "tickets": "8",
+      "tickets_available": "62",
       "description": "The series follows a warrior and a young boy who journey through a dangerous feudal land together seeking enlightenment.",
       "poster": "images/intothebadposter.jpeg"
     },

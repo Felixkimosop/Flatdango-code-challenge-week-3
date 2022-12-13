@@ -88,7 +88,7 @@ btn.addEventListener("click", function (e) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({tickets:tickets, tickets_available:tickestsAvailable
+    body: JSON.stringify({tickets:tickets.textContent, tickets_available:tickestsAvailable.textContent
     })
 
   })
