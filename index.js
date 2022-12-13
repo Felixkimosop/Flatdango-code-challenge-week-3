@@ -57,6 +57,7 @@ btn.addEventListener("click", function (e) {
   e.preventDefault()
 
   let noOfTickets = document.getElementById("amount").value;
+  let id = document.querySelector("#id").value
   
 
     
@@ -73,13 +74,25 @@ btn.addEventListener("click", function (e) {
   }
   else{
     const newTickets = parseInt(tickets.textContent) + parseInt(noOfTickets);
-  tickets.textContent = newTickets;
+  tickets.textContent =parseInt( newTickets);
   // tickestsAvailable.textContent = parseInt(capacity.textContent) - parseInt(tickets.textContent)
-    tickets.textContent = newTickets
+    tickets.textContent =parseInt( newTickets)
     tickestsAvailable.textContent  = parseInt(tickestsAvailable.textContent)-parseInt(noOfTickets)
-  }
 
-  
+  }
+  console.log(tickets.textContent)
+  console.log(tickestsAvailable.textContent)
+
+  // fetch(`http://localhost:3000/Premiere/${id}`,{
+  //   method: "PATCH",
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify({tickets:tickets, tickets_available:tickestsAvailable
+  //   })
+
+  // })
+  // .then(res => res.json()).then(premiere => tickets.textContent = premiere.tickets)
 
   
 });
