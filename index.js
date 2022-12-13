@@ -12,7 +12,7 @@ let tickets = document.getElementById("tickets");
 const description = document.getElementById("description");
 const form = document.querySelector("#form");
 let input = document.createElement("input");
-// input.type = "hidden";
+input.type = "hidden";
 input.id = "id";
 form.appendChild(input);
 let tickestsAvailable = document.getElementById("ticket")
@@ -83,16 +83,16 @@ btn.addEventListener("click", function (e) {
   console.log(tickets.textContent)
   console.log(tickestsAvailable.textContent)
 
-  // fetch(`http://localhost:3000/Premiere/${id}`,{
-  //   method: "PATCH",
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({tickets:tickets, tickets_available:tickestsAvailable
-  //   })
+  fetch(`http://localhost:3000/Premiere/${id}`,{
+    method: "PATCH",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({tickets:tickets, tickets_available:tickestsAvailable
+    })
 
-  // })
-  // .then(res => res.json()).then(premiere => tickets.textContent = premiere.tickets)
+  })
+  .then(res => res.json()).then(premiere => tickets.textContent = premiere.tickets)
 
   
 });
